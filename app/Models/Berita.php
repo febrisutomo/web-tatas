@@ -24,6 +24,4 @@ class Berita extends Model
     {
         return $this->belongsTo(Kategori::class, 'IDKATEGORI', 'IDKATEGORI');
     }
-
-
 }

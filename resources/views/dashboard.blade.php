@@ -44,7 +44,7 @@
                             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
                                 class="rounded-circle me-2">
                             <div>
-                                <h6 class="m-0">{{ session()->get('auth.user')->NAMA }}</h6>
+                                <h6 class="m-0">{{ Auth::user()->NAMA }}</h6>
                                 <span class="badge bg-primary">admin</span>
                             </div>
                         </a>
@@ -78,6 +78,27 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Username</th>
+                    <th>Alamat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $index => $user)
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $user->NAMA }}</td>
+                        <td>{{ $user->USERNAMEX }}</td>
+                        <td>{{ $user->ALAMAT }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
 
     </div>

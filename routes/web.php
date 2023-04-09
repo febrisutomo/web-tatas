@@ -25,6 +25,6 @@ Route::post('/login', [AuthController::class, 'attemptLogin'])->name('login.atte
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Must login 
-Route::group(['prefix' => '', 'middleware' => 'login'], function () {
+Route::group(['prefix' => '', 'middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
