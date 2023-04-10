@@ -24,7 +24,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        $response = Http::post('http://127.0.0.1:5000/auth/login', $credentials);
+        $response = Http::post(env('API_URL') . '/auth/login', $credentials);
 
         if ($response->successful()) {
             $responseBody = $response->object();
